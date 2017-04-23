@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.get('/api/product', (req, res) => {
-  
+  res.status(200).send({products: []})
 })
 
 app.get('/api/product/:productId', (req, res) => {
@@ -22,7 +22,8 @@ app.get('/api/product/:productId', (req, res) => {
 })
 
 app.post('/api/product', (req, res) => {
-
+  console.log(req.body)
+  res.status(200).send({message: 'El producto se ha recibido'})
 })
 
 app.put('/api/product/:productId', (req, res) => {

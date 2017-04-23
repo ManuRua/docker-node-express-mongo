@@ -13,8 +13,24 @@ mongoose.connect("mongodb://mongo:27017")
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/hola/:name', function(req, res){
-  res.send({ message: `Hola ${req.params.name}!` })
+app.get('/api/product', (req, res) => {
+  
+})
+
+app.get('/api/product/:productId', (req, res) => {
+
+})
+
+app.post('/api/product', (req, res) => {
+
+})
+
+app.put('/api/product/:productId', (req, res) => {
+
+})
+
+app.delete('/api/product/:productId', (req, res) => {
+
 })
 
 app.listen(port, () => {

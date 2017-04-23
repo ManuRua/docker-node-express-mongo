@@ -8,7 +8,14 @@ const app = express()
 const port = process.env.PORT || 3000
 
 // BD Setup
-mongoose.connect("mongodb://mongo:27017")
+mongoose.connect("mongodb://mongo:27017/shop", (err, res) => {
+  if (err) throw err
+  console.log('Conexión a la base de datos establecida')
+
+  app.listen(port, () => {
+    console.log(`API REST corriendo en el puerto ${port}!`);
+  })
+})
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -32,8 +39,4 @@ app.put('/api/product/:productId', (req, res) => {
 
 app.delete('/api/product/:productId', (req, res) => {
 
-})
-
-app.listen(port, () => {
-  console.log(`API REST corriendo en el puerto ${port}!`);
 })

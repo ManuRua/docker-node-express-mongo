@@ -2,7 +2,7 @@
   "name": "docker-node-express-mongo",
   "version": "1.0.0",
   "description": "Proyecto de API RESTful con Node.js y Express",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
